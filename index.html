@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نساجون | للسجاد والمفروشات</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+:root{
+    --primary:#5b3925;
+    --primary-dark:#3d2518;
+    --gold:#b9935a;
+    --cream:#f8f4ed;
+    --white:#fff;
+    --text:#2d2925;
+    --muted:#77716a;
+    --border:#e7dfd4;
+    --danger:#b52d2d;
+    --success:#27804a;
+    --shadow:0 12px 35px rgba(61,37,24,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Cairo',sans-serif;background:#fbfaf8;color:var(--text);line-height:1.7;}
+button,input,textarea,select{font-family:inherit;}
+button{cursor:pointer;}
+a{text-decoration:none;color:inherit;}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(15px);border-bottom:1px solid var(--border);}
+.header-inner{max-width:1250px;margin:auto;min-height:82px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-mark{width:64px;height:48px;border-radius:14px;background:linear-gradient(135deg,#5b3925,#8a6543);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0;box-shadow:0 8px 20px rgba(91,57,37,.2);overflow:hidden;border:1px solid rgba(185,147,90,.45);}
+.logo-mark svg{width:100%;height:100%;display:block;}
+.logo-text h1{font-size:23px;color:var(--primary);font-weight:800;line-height:1.2;}
+.logo-text span{display:block;font-size:11px;color:var(--gold);font-weight:700;}
+.nav{display:flex;align-items:center;gap:25px;}
+.nav a{color:#5d554d;font-size:14px;font-weight:700;transition:.2s;}
+.nav a:hover{color:var(--primary);}
+.header-actions{display:flex;gap:10px;align-items:center;}
+.icon-btn{border:1px solid var(--border);background:#fff;color:var(--primary);min-width:44px;height:44px;padding:0 12px;border-radius:12px;font-weight:800;position:relative;}
+.cart-count{position:absolute;top:-7px;left:-7px;width:21px;height:21px;background:var(--gold);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;}
+
+/* HERO */
+.hero{max-width:1250px;margin:30px auto 0;padding:0 20px;}
+.hero-box{min-height:440px;border-radius:28px;overflow:hidden;background:linear-gradient(90deg,rgba(35,22,13,.88),rgba(35,22,13,.35)),url('https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&w=1600&q=90') center/cover;display:flex;align-items:center;padding:60px;color:#fff;}
+.hero-content{max-width:600px;}
+.hero-label{color:#e6c88e;font-size:14px;font-weight:800;margin-bottom:12px;}
+.hero h2{font-size:46px;line-height:1.25;margin-bottom:18px;font-weight:800;}
+.hero p{font-size:16px;color:#f0ebe5;margin-bottom:28px;max-width:520px;}
+.primary-btn{border:0;background:var(--primary);color:#fff;padding:13px 25px;border-radius:12px;font-weight:800;transition:.2s;}
+.primary-btn:hover{background:var(--primary-dark);transform:translateY(-2px);}
+.gold-btn{border:0;background:var(--gold);color:#fff;padding:13px 25px;border-radius:12px;font-weight:800;}
+.outline-btn{border:1px solid var(--border);background:#fff;color:var(--primary);padding:11px 20px;border-radius:11px;font-weight:700;}
+
+/* SECTIONS */
+.section{max-width:1250px;margin:65px auto;padding:0 20px;}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:25px;}
+.section-head h2{color:var(--primary);font-size:29px;}
+.section-head p{color:var(--muted);font-size:13px;}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.product-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.04);transition:.25s;cursor:pointer;}
+.product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+.product-image{height:230px;position:relative;background:#eee;overflow:hidden;}
+.product-image img{width:100%;height:100%;object-fit:cover;transition:.4s;}
+.product-card:hover .product-image img{transform:scale(1.04);}
+.product-type{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.92);color:var(--primary);padding:5px 10px;border-radius:20px;font-size:11px;font-weight:800;}
+.product-body{padding:17px;}
+.product-body h3{font-size:17px;color:var(--primary);margin-bottom:5px;}
+.product-description{color:var(--muted);font-size:12px;min-height:42px;}
+.product-price{margin-top:13px;font-weight:800;color:var(--gold);}
+.product-actions{display:flex;gap:8px;margin-top:15px;}
+.product-actions button{flex:1;}
+
+/* FEATURES */
+.features{background:var(--cream);padding:45px 20px;}
+.features-inner{max-width:1250px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.feature{background:#fff;border:1px solid var(--border);border-radius:17px;padding:24px;display:flex;gap:15px;align-items:center;}
+.feature-icon{width:52px;height:52px;border-radius:14px;background:#f1e8da;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:22px;}
+.feature h3{font-size:15px;color:var(--primary);}
+.feature p{color:var(--muted);font-size:12px;}
+
+/* FOOTER */
+.footer{background:#302118;color:#fff;margin-top:70px;}
+.footer-inner{max-width:1250px;margin:auto;padding:45px 20px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;}
+.footer h3{margin-bottom:12px;}
+.footer p,.footer li{color:#cfc5ba;font-size:13px;}
+.footer ul{list-style:none;}
+.footer li{margin-bottom:8px;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:15px;text-align:center;color:#b9afa4;font-size:12px;}
+
+/* MODALS */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:3000;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.active{display:flex;}
+.modal{background:#fff;width:100%;max-width:650px;max-height:92vh;overflow:hidden;display:flex;flex-direction:column;border-radius:22px;box-shadow:0 30px 80px rgba(0,0,0,.25);}
+.modal-header{position:sticky;top:0;z-index:2;background:#fff;padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.modal-header h2{color:var(--primary);font-size:19px;}
+.close-btn{width:36px;height:36px;border:0;background:#f4f0eb;color:var(--primary);border-radius:10px;font-size:18px;}
+.modal-content{padding:22px;overflow-y:auto;max-height:calc(92vh - 70px);}
+
+/* PRODUCT MODAL */
+.product-modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;}
+.product-modal-image{width:100%;height:340px;object-fit:cover;border-radius:16px;}
+.size-list{display:grid;gap:9px;margin:15px 0;}
+.size-option{border:1px solid var(--border);padding:11px 13px;border-radius:11px;cursor:pointer;display:flex;justify-content:space-between;}
+.size-option.selected{border-color:var(--gold);background:#fbf6ed;}
+.quantity-control{display:flex;align-items:center;gap:10px;margin:15px 0;}
+.qty-btn{width:38px;height:38px;border:1px solid var(--border);background:#fff;border-radius:9px;font-size:18px;}
+.qty-value{min-width:30px;text-align:center;font-weight:800;}
+
+/* FORM */
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;color:var(--primary);font-size:13px;font-weight:800;margin-bottom:6px;}
+.form-control{width:100%;border:1px solid var(--border);border-radius:11px;padding:12px 13px;outline:none;background:#fff;}
+.form-control:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(185,147,90,.1);}
+textarea.form-control{min-height:95px;resize:vertical;}
+.checkout-summary{background:var(--cream);border-radius:14px;padding:15px;margin-bottom:20px;}
+.checkout-row{display:flex;justify-content:space-between;padding:6px 0;font-size:13px;}
+.checkout-total{border-top:1px solid var(--border);margin-top:8px;padding-top:12px;font-weight:800;color:var(--primary);font-size:17px;}
+
+/* CART */
+.cart-item{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--border);}
+.cart-item img{width:80px;height:80px;object-fit:cover;border-radius:11px;}
+.cart-info{flex:1;}
+.cart-info h4{font-size:14px;color:var(--primary);}
+.cart-info p{font-size:11px;color:var(--muted);}
+.cart-price{font-weight:800;color:var(--gold);font-size:13px;}
+.remove-cart{border:0;background:none;color:var(--danger);font-size:12px;cursor:pointer;}
+
+/* WHATSAPP */
+.whatsapp-float{position:fixed;left:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:25px;box-shadow:0 10px 30px rgba(37,211,102,.3);z-index:2000;border:none;}
+.whatsapp-popup{display:none;position:fixed;left:20px;bottom:88px;width:300px;background:#fff;border-radius:17px;box-shadow:var(--shadow);z-index:2000;border:1px solid var(--border);overflow:hidden;}
+.whatsapp-popup.active{display:block;}
+.whatsapp-head{background:#25d366;color:#fff;padding:15px;font-weight:800;}
+.whatsapp-body{padding:15px;}
+.whatsapp-body p{font-size:13px;color:var(--muted);margin-bottom:12px;}
+.whatsapp-link{display:block;background:#25d366;color:#fff;text-align:center;padding:10px;border-radius:9px;font-weight:800;}
+
+/* ADVERTISEMENT */
+.ad-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:5000;align-items:center;justify-content:center;padding:20px;}
+.ad-overlay.active{display:flex;}
+.ad-box{width:min(850px,100%);background:#fff;border-radius:20px;overflow:hidden;position:relative;}
+.ad-box img{display:block;width:100%;max-height:75vh;object-fit:cover;}
+.skip-ad{position:absolute;top:15px;left:15px;border:0;background:rgba(0,0,0,.65);color:#fff;padding:8px 15px;border-radius:9px;font-weight:700;}
+
+/* ADMIN LOGIN */
+.admin-login{max-width:420px;}
+.admin-login-content{padding:25px;}
+
+/* ADMIN */
+.admin-overlay{display:none;position:fixed;inset:0;background:#f5f3ef;z-index:4000;overflow:auto;}
+.admin-overlay.active{display:block;}
+.admin-layout{min-height:100vh;display:grid;grid-template-columns:250px 1fr;}
+.admin-sidebar{background:#302118;color:#fff;padding:22px 15px;position:sticky;top:0;height:100vh;}
+.admin-brand{padding:10px 12px 25px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:15px;}
+.admin-brand h2{font-size:21px;}
+.admin-brand p{font-size:11px;color:#bcae9f;}
+.admin-menu{display:grid;gap:6px;}
+.admin-menu button{border:0;background:transparent;color:#cfc4b8;text-align:right;padding:12px 14px;border-radius:10px;font-weight:700;width:100%;}
+.admin-menu button:hover,.admin-menu button.active{background:rgba(255,255,255,.1);color:#fff;}
+.admin-main{min-width:0;}
+.admin-topbar{height:72px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 25px;position:sticky;top:0;z-index:5;}
+.admin-topbar h1{font-size:20px;color:var(--primary);}
+.admin-content{padding:25px;}
+.admin-section{display:none;}
+.admin-section.active{display:block;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:25px;}
+.stat-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;}
+.stat-card p{color:var(--muted);font-size:12px;}
+.stat-card h2{color:var(--primary);font-size:28px;margin-top:5px;}
+.admin-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:20px;}
+.admin-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:17px;}
+.admin-card-head h3{color:var(--primary);}
+.table-wrap{overflow:auto;}
+.admin-table{width:100%;border-collapse:collapse;min-width:750px;}
+.admin-table th,.admin-table td{padding:12px 10px;border-bottom:1px solid var(--border);text-align:right;font-size:12px;}
+.admin-table th{color:var(--primary);background:#faf8f5;}
+.table-product{display:flex;align-items:center;gap:10px;}
+.table-product img{width:48px;height:48px;border-radius:8px;object-fit:cover;}
+.status{display:inline-block;padding:4px 9px;border-radius:20px;font-size:10px;font-weight:800;}
+.status-new{background:#e8f3ff;color:#2268a5;}
+.status-done{background:#e7f6ec;color:#27804a;}
+.status-cancel{background:#fdeaea;color:#b52d2d;}
+.action-buttons{display:flex;gap:6px;}
+.small-btn{border:1px solid var(--border);background:#fff;padding:7px 10px;border-radius:8px;font-size:11px;font-weight:700;}
+.danger-btn{color:var(--danger);border-color:#f0cccc;}
+.product-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
+.full{grid-column:1/-1;}
+.image-preview{margin-top:10px;width:150px;height:110px;border-radius:10px;object-fit:cover;display:none;border:1px solid var(--border);}
+.size-row{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:8px;}
+.admin-empty{padding:35px;text-align:center;color:var(--muted);}
+.order-details{background:#faf8f5;border-radius:12px;padding:15px;margin-top:10px;}
+.order-details p{font-size:12px;margin:4px 0;}
+.sync-badge{font-size:10px;background:#e7f6ec;color:#27804a;padding:5px 10px;border-radius:20px;border:1px solid #c6e8d0;}
+.sync-badge.offline{background:#fdeaea;color:#b52d2d;border-color:#f0cccc;}
+
+@media(max-width:1000px){.products-grid{grid-template-columns:repeat(3,1fr);}.stats-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:750px){.nav{display:none;}.hero-box{padding:35px 25px;min-height:390px;}.hero h2{font-size:32px;}.products-grid{grid-template-columns:repeat(2,1fr);}.features-inner{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr;}.product-modal-grid{grid-template-columns:1fr;}.product-modal-image{height:280px;}.admin-layout{grid-template-columns:1fr;}.admin-sidebar{position:relative;height:auto;padding:12px;}.admin-menu{grid-template-columns:repeat(3,1fr);}.admin-menu button{text-align:center;font-size:10px;padding:9px 4px;}.admin-content{padding:15px;}.product-form-grid{grid-template-columns:1fr;}.full{grid-column:auto;}}
+@media(max-width:480px){.products-grid{grid-template-columns:1fr 1fr;gap:10px;}.product-image{height:180px;}.product-body{padding:12px;}.product-body h3{font-size:14px;}.product-actions{flex-direction:column;}.header-inner{padding:10px 13px;}.logo-text h1{font-size:19px;}.logo-mark{width:58px;height:45px;}.hero{padding:0 12px;}.hero-box{border-radius:20px;}.section{padding:0 12px;}.stats-grid{gap:8px;}.stat-card{padding:13px;}.stat-card h2{font-size:22px;}}
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a class="logo" href="#home">
+            <div class="logo-mark">
+                <svg viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="goldLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e5c98f"/><stop offset="100%" stop-color="#b9935a"/></linearGradient></defs>
+                    <rect x="5" y="5" width="170" height="90" rx="18" fill="none" stroke="url(#goldLogo)" stroke-width="2"/>
+                    <path d="M22 50 C32 32 48 32 58 50 C68 68 84 68 94 50 C104 32 120 32 130 50 C140 68 156 68 166 50" fill="none" stroke="url(#goldLogo)" stroke-width="2" opacity=".75"/>
+                    <text x="90" y="57" text-anchor="middle" direction="rtl" unicode-bidi="bidi-override" font-family="Cairo, Arial, sans-serif" font-size="28" font-weight="800" fill="#ffffff">نساجون</text>
+                    <line x1="45" y1="72" x2="135" y2="72" stroke="url(#goldLogo)" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="logo-text"><h1>نساجون</h1><span>للسجاد والمفروشات</span></div>
+        </a>
+        <nav class="nav"><a href="#home">الرئيسية</a><a href="#products">المنتجات</a><a href="#about">عن نساجون</a><a href="#contact">تواصل معنا</a></nav>
+        <div class="header-actions">
+            <button class="icon-btn" onclick="openCart()" title="السلة">🛒<span class="cart-count" id="cartCount">0</span></button>
+            <button class="icon-btn" onclick="openAdminLogin()" title="الإدارة">⚙️</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-box">
+        <div class="hero-content">
+            <div class="hero-label">نساجون للسجاد والمفروشات</div>
+            <h2>أناقة تبدأ من الأرض</h2>
+            <p>تشكيلة مختارة من السجاد الفاخر بتصاميم عصرية وخامات عالية الجودة لتمنح منزلك لمسة من الفخامة.</p>
+            <a href="#products" class="gold-btn">تصفح المنتجات</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="products">
+    <div class="section-head">
+        <div>
+            <h2>منتجاتنا <span id="syncStatus" class="sync-badge">● جاري المزامنة مع Google Sheets</span></h2>
+            <p>اكتشف أحدث تشكيلات السجاد والمفروشات - مشتركة بين جميع الأجهزة</p>
+        </div>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<section class="features" id="about">
+    <div class="features-inner">
+        <div class="feature"><div class="feature-icon">✦</div><div><h3>جودة مختارة</h3><p>منتجات بخامات وتصاميم مختارة بعناية.</p></div></div>
+        <div class="feature"><div class="feature-icon">✓</div><div><h3>خدمة موثوقة</h3><p>نهتم بتجربة العميل من الطلب حتى الاستلام.</p></div></div>
+        <div class="feature"><div class="feature-icon">⌂</div><div><h3>اختيارات متعددة</h3><p>قياسات وتصاميم تناسب مختلف المساحات.</p></div></div>
+    </div>
+</section>
+
+<footer class="footer" id="contact">
+    <div class="footer-inner">
+        <div><h3>نساجون</h3><p>متجر متخصص بالسجاد والمفروشات، نقدم تشكيلة أنيقة تلائم مختلف الأذواق والمساحات.</p></div>
+        <div><h3>روابط</h3><ul><li><a href="#home">الرئيسية</a></li><li><a href="#products">المنتجات</a></li><li><a href="#about">عن نساجون</a></li></ul></div>
+        <div><h3>تواصل معنا</h3><ul><li>واتساب: 07778060060</li><li>خدمة العملاء متوفرة للطلبات والاستفسارات</li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 نساجون للسجاد والمفروشات — جميع الحقوق محفوظة</div>
+</footer>
+
+<button class="whatsapp-float" onclick="toggleWhatsapp()">◉</button>
+<div class="whatsapp-popup" id="whatsappPopup">
+    <div class="whatsapp-head">تواصل معنا</div>
+    <div class="whatsapp-body">
+        <p>للاستفسار أو طلب المساعدة تواصل معنا مباشرة عبر واتساب.</p>
+        <a class="whatsapp-link" href="https://wa.me/9647778060060" target="_blank">فتح واتساب</a>
+    </div>
+</div>
+
+<div class="ad-overlay" id="adOverlay">
+    <div class="ad-box">
+        <button class="skip-ad" onclick="skipAdvertisement()">تخطي الإعلان</button>
+        <img id="advertisementImage" src="" alt="إعلان">
+    </div>
+</div>
+
+<div class="modal-overlay" id="productModal">
+    <div class="modal">
+        <div class="modal-header"><h2>تفاصيل المنتج</h2><button class="close-btn" onclick="closeModal('productModal')">×</button></div>
+        <div class="modal-content" id="productModalContent"></div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="cartModal">
+    <div class="modal">
+        <div class="modal-header"><h2>سلة المشتريات</h2><button class="close-btn" onclick="closeModal('cartModal')">×</button></div>
+        <div class="modal-content">
+            <div id="cartItems"></div>
+            <div class="checkout-summary">
+                <div class="checkout-row"><span>عدد المنتجات</span><strong id="cartItemsCount">0</strong></div>
+                <div class="checkout-row checkout-total"><span>المجموع النهائي</span><strong id="cartTotal">0 د.ع</strong></div>
+            </div>
+            <button class="primary-btn" style="width:100%" onclick="openCheckout()">إتمام الطلب</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="checkoutModal">
+    <div class="modal">
+        <div class="modal-header"><h2>إتمام الطلب</h2><button class="close-btn" onclick="closeModal('checkoutModal')">×</button></div>
+        <div class="modal-content">
+            <div class="checkout-summary">
+                <div class="checkout-row"><span>المجموع</span><strong id="checkoutTotal">0 د.ع</strong></div>
+            </div>
+            <form id="checkoutForm" onsubmit="submitOrder(event)">
+                <div class="form-group"><label>الاسم الكامل *</label><input class="form-control" id="customerName" required placeholder="اكتب اسمك الكامل"></div>
+                <div class="form-group"><label>رقم الهاتف *</label><input class="form-control" id="customerPhone" type="tel" required placeholder="07xxxxxxxxx"></div>
+                <div class="form-group"><label>المحافظة / المدينة *</label><input class="form-control" id="customerCity" required placeholder="مثال: بغداد / الكاظمية"></div>
+                <div class="form-group"><label>العنوان بالتفصيل *</label><textarea class="form-control" id="customerAddress" required placeholder="المحلة، الزقاق، الدار، أقرب نقطة دالة..."></textarea></div>
+                <div class="form-group"><label>ملاحظات إضافية</label><textarea class="form-control" id="customerNotes" placeholder="أي ملاحظات خاصة بالطلب"></textarea></div>
+                <button type="submit" class="primary-btn" style="width:100%" id="submitOrderBtn">تأكيد الطلب وحفظه في Google Sheets</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="adminLoginModal">
+    <div class="modal admin-login">
+        <div class="modal-header"><h2>دخول لوحة الإدارة</h2><button class="close-btn" onclick="closeModal('adminLoginModal')">×</button></div>
+        <div class="admin-login-content">
+            <div class="form-group">
+                <label>رمز الدخول</label>
+                <input class="form-control" id="adminCodeInput" type="password" placeholder="أدخل رمز الإدارة" onkeydown="if(event.key==='Enter') loginAdmin()">
+            </div>
+            <button class="primary-btn" style="width:100%" onclick="loginAdmin()">دخول لوحة الإدارة</button>
+        </div>
+    </div>
+</div>
+
+<div class="admin-overlay" id="adminOverlay">
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="admin-brand"><h2>نساجون</h2><p>لوحة إدارة المتجر - متزامن مع Google Sheets</p></div>
+            <div class="admin-menu">
+                <button class="active" onclick="showAdminSection('dashboard',this)">📊 الرئيسية</button>
+                <button onclick="showAdminSection('productsAdmin',this)">🧶 المنتجات</button>
+                <button onclick="showAdminSection('addProduct',this)">＋ إضافة منتج</button>
+                <button onclick="showAdminSection('ordersAdmin',this)">🛒 الطلبات</button>
+                <button onclick="showAdminSection('advertisementAdmin',this)">📢 الإعلان</button>
+                <button onclick="showAdminSection('settingsAdmin',this)">⚙️ الإعدادات</button>
+                <button onclick="closeAdmin()">← العودة للمتجر</button>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <div class="admin-topbar">
+                <h1 id="adminPageTitle">لوحة التحكم</h1>
+                <div style="display:flex;gap:10px;align-items:center">
+                    <span id="adminSyncStatus" class="sync-badge">● متصل</span>
+                    <button class="outline-btn" onclick="closeAdmin()">العودة للمتجر</button>
+                </div>
+            </div>
+            <div class="admin-content">
+                <section class="admin-section active" id="dashboard">
+                    <div class="stats-grid">
+                        <div class="stat-card"><p>إجمالي المنتجات</p><h2 id="statProducts">0</h2></div>
+                        <div class="stat-card"><p>إجمالي الطلبات</p><h2 id="statOrders">0</h2></div>
+                        <div class="stat-card"><p>الطلبات الجديدة</p><h2 id="statNewOrders">0</h2></div>
+                        <div class="stat-card"><p>إجمالي المبيعات</p><h2 id="statSales">0</h2></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-head"><h3>آخر الطلبات</h3></div>
+                        <div id="latestOrders"></div>
+                    </div>
+                </section>
+                <section class="admin-section" id="productsAdmin">
+                    <div class="admin-card">
+                        <div class="admin-card-head">
+                            <h3>إدارة المنتجات - Google Sheets</h3>
+                            <button class="primary-btn" onclick="showAdminSection('addProduct')">+ إضافة منتج</button>
+                        </div>
+                        <div class="table-wrap">
+                            <table class="admin-table">
+                                <thead><tr><th>المنتج</th><th>النوع</th><th>الخامة</th><th>المخزون</th><th>السعر يبدأ من</th><th>إجراء</th></tr></thead>
+                                <tbody id="productsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <section class="admin-section" id="addProduct">
+                    <div class="admin-card">
+                        <div class="admin-card-head"><h3 id="productFormTitle">إضافة منتج جديد - سيُحفظ في Google Sheets</h3></div>
+                        <form id="productForm" onsubmit="saveProduct(event)">
+                            <input type="hidden" id="editProductId">
+                            <div class="product-form-grid">
+                                <div class="form-group"><label>اسم المنتج *</label><input class="form-control" id="productTitle" required placeholder="مثال: سجادة تركية فاخرة"></div>
+                                <div class="form-group"><label>نوع المنتج</label><input class="form-control" id="productType" placeholder="تركية / إيرانية / مودرن"></div>
+                                <div class="form-group"><label>الخامة</label><input class="form-control" id="productMaterial" placeholder="أكريلك / صوف / حرير"></div>
+                                <div class="form-group"><label>المخزون</label><input class="form-control" id="productStock" type="number" min="0" value="1"></div>
+                                <div class="form-group full"><label>وصف المنتج</label><textarea class="form-control" id="productDescription" placeholder="اكتب وصفاً مختصراً للمنتج"></textarea></div>
+                                <div class="form-group full">
+                                    <label>صورة المنتج</label>
+                                    <input class="form-control" type="file" id="productImageFile" accept="image/*" onchange="previewProductImage(event)">
+                                    <small style="color:#777">اختر الصورة من معرض الجهاز فقط - سيتم ضغطها تلقائياً.</small>
+                                    <img id="productImagePreview" class="image-preview" alt="معاينة الصورة">
+                                </div>
+                                <div class="form-group full">
+                                    <label>القياسات والأسعار</label>
+                                    <div id="sizesContainer"></div>
+                                    <button type="button" class="outline-btn" onclick="addSizeRow()">+ إضافة قياس</button>
+                                </div>
+                            </div>
+                            <div style="display:flex;gap:10px;margin-top:20px">
+                                <button type="submit" class="primary-btn" id="saveProductBtn">حفظ في Google Sheets</button>
+                                <button type="button" class="outline-btn" onclick="resetProductForm()">تفريغ الحقول</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <section class="admin-section" id="ordersAdmin">
+                    <div class="admin-card">
+                        <div class="admin-card-head">
+                            <h3>إدارة الطلبات - من Google Sheets</h3>
+                            <div style="display:flex;gap:8px">
+                                <button class="outline-btn" onclick="loadOrders()">↻ تحديث</button>
+                                <button class="outline-btn" onclick="clearOrders()">حذف جميع الطلبات</button>
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table class="admin-table">
+                                <thead><tr><th>رقم الطلب</th><th>العميل</th><th>الهاتف</th><th>المحافظة</th><th>العنوان</th><th>المجموع</th><th>الحالة</th><th>التاريخ</th><th>إجراء</th></tr></thead>
+                                <tbody id="ordersTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <section class="admin-section" id="advertisementAdmin">
+                    <div class="admin-card">
+                        <div class="admin-card-head"><h3>إدارة الإعلان الافتتاحي - مشترك بين الأجهزة</h3></div>
+                        <div class="form-group">
+                            <label>صورة الإعلان</label>
+                            <input class="form-control" type="file" id="adImageFile" accept="image/*" onchange="previewAdImage(event)">
+                            <img id="adImagePreview" class="image-preview" style="width:260px;height:160px" alt="معاينة الإعلان">
+                        </div>
+                        <div style="display:flex;gap:10px;flex-wrap:wrap">
+                            <button class="primary-btn" onclick="saveAdvertisement()">حفظ الإعلان في Google Sheets</button>
+                            <button class="outline-btn" onclick="disableAdvertisement()">إيقاف الإعلان</button>
+                            <button class="outline-btn" onclick="showAdvertisementNow()">معاينة الإعلان</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="admin-section" id="settingsAdmin">
+                    <div class="admin-card">
+                        <div class="admin-card-head"><h3>إعدادات المتجر - مشتركة</h3></div>
+                        <div class="product-form-grid">
+                            <div class="form-group"><label>اسم المتجر</label><input class="form-control" id="settingStoreName" value="نساجون"></div>
+                            <div class="form-group"><label>رقم واتساب الاستفسارات</label><input class="form-control" id="settingWhatsapp" value="9647778060060"></div>
+                            <div class="form-group full"><label>وصف المتجر</label><textarea class="form-control" id="settingDescription"></textarea></div>
+                        </div>
+                        <div style="margin-top:15px"><button class="primary-btn" onclick="saveSettings()" id="saveSettingsBtn">حفظ الإعدادات في Google Sheets</button></div>
+                        <div style="margin-top:20px;padding:15px;background:#fff8e9;border:1px solid #ead8ad;border-radius:12px;font-size:12px;color:#765c28;"><strong>ملاحظة:</strong> رقم واتساب استقبال الطلبات ثابت على <strong>+9647778060060</strong> ويتم حفظه في Google Sheets.</div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+/* CONFIG - Google Apps Script API Updated */
+const API_URL = "https://script.google.com/macros/s/AKfycbxowxpwwK-Pts6HHOGhVhl1VBEalHeV67AwEDYyFrhJW-yr7NbTwdJQAGAnmrPf87AT/exec";
+
+/* CONSTANTS */
+const ADMIN_CODE = "20252026";
+const ORDER_WHATSAPP = "9647778060060";
+const STORAGE_CART = "nasajon_cart";
+const STORAGE_BACKUP_PRODUCTS = "nasajon_products_backup";
+const STORAGE_BACKUP_ORDERS = "nasajon_orders_backup";
+const STORAGE_BACKUP_SETTINGS = "nasajon_settings_backup";
+const STORAGE_BACKUP_AD = "nasajon_ad_backup";
+
+/* API HELPERS */
+async function apiGet(action){
+    try{
+        const res = await fetch(`${API_URL}?action=${action}`, { method: 'GET' });
+        const data = await res.json();
+        setSyncStatus(true);
+        return data;
+    }catch(e){
+        console.error('apiGet error', action, e);
+        setSyncStatus(false);
+        return null;
+    }
+}
+async function apiPost(payload){
+    try{
+        const res = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+        });
+        const text = await res.text();
+        let data;
+        try { data = JSON.parse(text); } catch(e) { data = { success: true }; }
+        setSyncStatus(true);
+        return data;
+    }catch(e){
+        console.error('apiPost error', e);
+        setSyncStatus(false);
+        alert('حدث خطأ في الاتصال بـ Google Sheets، سيتم استخدام النسخة المحلية مؤقتاً');
+        return null;
+    }
+}
+function setSyncStatus(online){
+    const badges = [document.getElementById('syncStatus'), document.getElementById('adminSyncStatus')];
+    badges.forEach(b=>{
+        if(!b) return;
+        if(online){
+            b.textContent = '● متصل - Google Sheets';
+            b.className = 'sync-badge';
+        }else{
+            b.textContent = '● غير متصل - وضع محلي';
+            b.className = 'sync-badge offline';
+        }
+    });
+}
+
+/* HELPERS */
+function escapeHTML(value){return String(value ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");}
+function formatPrice(value){return Number(value || 0).toLocaleString("ar-IQ") + " د.ع";}
+function getJSON(key,fallback){try{const v=localStorage.getItem(key);return v?JSON.parse(v):fallback;}catch(e){return fallback;}}
+function setJSON(key,value){localStorage.setItem(key, JSON.stringify(value));}
+
+/* DEFAULT DATA */
+const defaultProducts = [{
+    id:"lhpjl9",
+    title:"سجادة تركية فاخرة",
+    description:"سجادة بتصميم أنيق وخامة ممتازة تناسب غرف الضيوف والمعيشة.",
+    image:"https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&w=900&q=85",
+    type:"تركية",
+    material:"أكريلك",
+    stock:15,
+    sizes:[{name:"2 × 3 متر",price:150000},{name:"3 × 4 متر",price:240000},{name:"4 × 6 متر",price:390000},{name:"5 × 8 متر",price:620000},{name:"6 × 9 متر",price:850000}]
+}];
+
+let products = getJSON(STORAGE_BACKUP_PRODUCTS, defaultProducts);
+let orders = getJSON(STORAGE_BACKUP_ORDERS, []);
+let settings = getJSON(STORAGE_BACKUP_SETTINGS, {storeName:"نساجون",whatsapp1:"9647778060060",description:"متجر متخصص بالسجاد والمفروشات."});
+let advertisement = getJSON(STORAGE_BACKUP_AD, {enabled:false,image:""});
+let cart = getJSON(STORAGE_CART, []);
+let selectedProduct = null;
+let selectedSizeIndex = 0;
+let selectedQuantity = 1;
+
+/* SAVE CART & BACKUP */
+function saveCart(){ setJSON(STORAGE_CART, cart); }
+function saveBackup(){
+    setJSON(STORAGE_BACKUP_PRODUCTS, products);
+    setJSON(STORAGE_BACKUP_ORDERS, orders);
+    setJSON(STORAGE_BACKUP_SETTINGS, settings);
+    setJSON(STORAGE_BACKUP_AD, advertisement);
+}
+
+/* LOAD FROM API */
+async function loadProducts(){
+    const data = await apiGet('getProducts');
+    if(data && data.products && Array.isArray(data.products) && data.products.length){
+        products = data.products.map(p=>{
+            let sizes = p.sizes;
+            if(typeof sizes === 'string'){
+                try{ 
+                    sizes = JSON.parse(sizes); 
+                }catch(e){ 
+                    try { sizes = eval('(' + sizes + ')'); } catch(err) { sizes = []; }
+                }
+            }
+            if(!Array.isArray(sizes)) sizes = [];
+            return {
+                id: String(p.id),
+                title: p.title || p.name || '',
+                description: p.description || '',
+                image: p.image || '',
+                type: p.type || p.category || '',
+                material: p.material || '',
+                stock: Number(p.stock || 0),
+                sizes: sizes
+            };
+        }).filter(p=>p.id);
+        saveBackup();
+    }else if(!products.length){
+        products = defaultProducts;
+    }
+    renderProducts();
+    renderProductsTable();
+}
+
+async function loadOrders(){
+    const data = await apiGet('getOrders');
+    if(data && data.orders && Array.isArray(data.orders)){
+        orders = data.orders.map(o=>{
+            let items = o.items;
+            if(typeof items === 'string'){ 
+                try{ 
+                    items = JSON.parse(items); 
+                }catch(e){ 
+                    try { items = eval('(' + items + ')'); } catch(err) { items = []; }
+                } 
+            }
+            if(!Array.isArray(items)) items = [];
+            let customer = o.customer;
+            if(typeof customer === 'string'){ 
+                try{ 
+                    customer = JSON.parse(customer); 
+                }catch(e){ 
+                    try { customer = eval('(' + customer + ')'); } catch(err) { customer = null; }
+                } 
+            }
+            if(!customer || typeof customer !== 'object'){
+                customer = { name: o.customerName || o.customer_name || '', phone: o.phone || '', city: o.city || '', address: o.address || '', notes: o.note || o.notes || '' };
+            }
+            return {
+                id: String(o.id),
+                customer: customer,
+                items: items,
+                total: Number(o.total || 0),
+                status: o.status || 'جديد',
+                date: o.date || ''
+            };
+        });
+        saveBackup();
+    }
+    renderOrdersTable();
+    renderLatestOrders();
+    updateStats();
+}
+
+async function loadSettingsAndAd(){
+    const data = await apiGet('getSettings');
+    if(data){
+        const s = data.settings || data;
+        if(s.storeName || s.store_name) settings.storeName = s.storeName || s.store_name || settings.storeName;
+        if(s.whatsapp1 || s.whatsapp || s.whatsapp_inquiry) settings.whatsapp1 = s.whatsapp1 || s.whatsapp || s.whatsapp_inquiry || settings.whatsapp1;
+        if(s.description) settings.description = s.description;
+        if(s.advertisement_enabled !== undefined || s.ad_enabled !== undefined){
+            advertisement.enabled = (s.advertisement_enabled === true || s.advertisement_enabled === 'true' || s.ad_enabled === true || s.ad_enabled === 'true');
+        }
+        if(s.advertisement_image || s.ad_image){
+            advertisement.image = s.advertisement_image || s.ad_image || advertisement.image;
+        }
+        saveBackup();
+    }
+    const adData = await apiGet('getAdvertisement');
+    if(adData && (adData.image || adData.advertisement)){
+        const ad = adData.advertisement || adData;
+        if(ad.image) advertisement.image = ad.image;
+        if(ad.enabled !== undefined) advertisement.enabled = ad.enabled === true || ad.enabled === 'true';
+        saveBackup();
+    }
+    loadAdvertisementPreview();
+    loadSettingsForm();
+}
+
+function loadSettingsForm(){
+    const el1 = document.getElementById('settingStoreName');
+    const el2 = document.getElementById('settingWhatsapp');
+    const el3 = document.getElementById('settingDescription');
+    if(el1) el1.value = settings.storeName || 'نساجون';
+    if(el2) el2.value = settings.whatsapp1 || '9647778060060';
+    if(el3) el3.value = settings.description || '';
+}
+
+/* PRODUCTS */
+function renderProducts(){
+    const grid = document.getElementById("productsGrid");
+    if(!grid) return;
+    if(!products.length){
+        grid.innerHTML = `<div class="admin-empty" style="grid-column:1/-1">لا توجد منتجات حالياً - أضف من لوحة التحكم وسيظهر على جميع الأجهزة.</div>`;
+        return;
+    }
+    grid.innerHTML = products.map(product=>{
+        const firstPrice = product.sizes && product.sizes.length ? Math.min(...product.sizes.map(s=>Number(s.price)||0)) : 0;
+        return `
+            <article class="product-card" onclick="openProduct('${escapeHTML(product.id)}')">
+                <div class="product-image">
+                    <img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.title)}" onerror="this.src='https://via.placeholder.com/400x300?text=نساجون'">
+                    <span class="product-type">${escapeHTML(product.type || "منتج")}</span>
+                </div>
+                <div class="product-body">
+                    <h3>${escapeHTML(product.title)}</h3>
+                    <p class="product-description">${escapeHTML(product.description || "")}</p>
+                    <div class="product-price">يبدأ من ${formatPrice(firstPrice)}</div>
+                    <div class="product-actions">
+                        <button class="primary-btn" onclick="event.stopPropagation(); openProduct('${escapeHTML(product.id)}')">التفاصيل</button>
+                        <button class="outline-btn" onclick="event.stopPropagation(); quickAddProduct('${escapeHTML(product.id)}')">🛒</button>
+                    </div>
+                </div>
+            </article>
+        `;
+    }).join("");
+}
+
+/* PRODUCT MODAL */
+function openProduct(id){
+    const product = products.find(p=>String(p.id)===String(id));
+    if(!product) return;
+    selectedProduct = product;
+    selectedSizeIndex = 0;
+    selectedQuantity = 1;
+    const sizes = product.sizes || [];
+    document.getElementById("productModalContent").innerHTML = `
+        <div class="product-modal-grid">
+            <div><img class="product-modal-image" src="${escapeHTML(product.image)}" alt="${escapeHTML(product.title)}"></div>
+            <div>
+                <h2 style="color:var(--primary);margin-bottom:7px">${escapeHTML(product.title)}</h2>
+                <p style="color:var(--muted);font-size:13px">${escapeHTML(product.description || "")}</p>
+                <p style="font-size:12px;margin-top:10px"><strong>النوع:</strong> ${escapeHTML(product.type || "-")}</p>
+                <p style="font-size:12px"><strong>الخامة:</strong> ${escapeHTML(product.material || "-")}</p>
+                <h4 style="margin-top:18px;color:var(--primary)">اختر القياس</h4>
+                <div class="size-list" id="modalSizeList">
+                    ${sizes.length ? sizes.map((size,index)=>`
+                        <div class="size-option ${index===0?"selected":""}" onclick="selectProductSize(${index})" id="sizeOption${index}">
+                            <span>${escapeHTML(size.name)}</span><strong>${formatPrice(size.price)}</strong>
+                        </div>
+                    `).join("") : `<p style="color:#777">لا توجد قياسات.</p>`}
+                </div>
+                <div class="quantity-control">
+                    <button class="qty-btn" onclick="changeProductQuantity(-1)">−</button>
+                    <span class="qty-value" id="productQuantity">1</span>
+                    <button class="qty-btn" onclick="changeProductQuantity(1)">+</button>
+                </div>
+                <button class="primary-btn" style="width:100%" onclick="addSelectedProductToCart()">إضافة إلى السلة</button>
+            </div>
+        </div>
+    `;
+    openModal("productModal");
+}
+function selectProductSize(index){
+    selectedSizeIndex = index;
+    document.querySelectorAll(".size-option").forEach(el=>{el.classList.remove("selected");});
+    const element = document.getElementById("sizeOption"+index);
+    if(element){element.classList.add("selected");}
+}
+function changeProductQuantity(change){
+    selectedQuantity += change;
+    if(selectedQuantity < 1) selectedQuantity = 1;
+    if(selectedQuantity > 99) selectedQuantity = 99;
+    const element = document.getElementById("productQuantity");
+    if(element){element.textContent = selectedQuantity;}
+}
+function addSelectedProductToCart(){
+    if(!selectedProduct) return;
+    const sizes = selectedProduct.sizes || [];
+    if(!sizes.length){ alert("هذا المنتج لا يحتوي على قياسات أو أسعار."); return; }
+    const size = sizes[selectedSizeIndex] || sizes[0];
+    const existing = cart.find(item => String(item.productId) === String(selectedProduct.id) && item.size === size.name);
+    if(existing){ existing.quantity += selectedQuantity; }
+    else{
+        cart.push({
+            id: "C-" + Date.now() + Math.random().toString(16).slice(2),
+            productId: selectedProduct.id,
+            title: selectedProduct.title,
+            image: selectedProduct.image,
+            size: size.name,
+            price: Number(size.price),
+            quantity: selectedQuantity
+        });
+    }
+    saveCart(); updateCartCount(); closeModal("productModal"); alert("تمت إضافة المنتج إلى السلة ✅");
+}
+function quickAddProduct(id){
+    const product = products.find(p=>String(p.id)===String(id));
+    if(!product || !product.sizes || !product.sizes.length){ alert("هذا المنتج لا يحتوي على أسعار."); return; }
+    const size = product.sizes[0];
+    const existing = cart.find(item => String(item.productId) === String(product.id) && item.size === size.name);
+    if(existing){ existing.quantity++; }
+    else{
+        cart.push({
+            id: "C-" + Date.now() + Math.random().toString(16).slice(2),
+            productId: product.id,
+            title: product.title,
+            image: product.image,
+            size: size.name,
+            price: Number(size.price),
+            quantity:1
+        });
+    }
+    saveCart(); updateCartCount(); alert("تمت إضافة المنتج إلى السلة ✅");
+}
+
+/* CART */
+function updateCartCount(){
+    const count = cart.reduce((sum,item)=> sum + Number(item.quantity || 0), 0);
+    const el = document.getElementById("cartCount");
+    if(el) el.textContent = count;
+}
+function getCartTotal(){ return cart.reduce((sum,item)=> sum + Number(item.price || 0) * Number(item.quantity || 0), 0); }
+function renderCart(){
+    const container = document.getElementById("cartItems");
+    if(!container) return;
+    if(!cart.length){
+        container.innerHTML = `<div class="admin-empty">السلة فارغة حالياً 🛒</div>`;
+    }else{
+        container.innerHTML = cart.map(item=>{
+            const itemTotal = Number(item.price || 0) * Number(item.quantity || 0);
+            return `
+                <div class="cart-item">
+                    <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)}">
+                    <div class="cart-info">
+                        <h4>${escapeHTML(item.title)}</h4>
+                        <p>القياس: ${escapeHTML(item.size)}</p>
+                        <p>الكمية: ${Number(item.quantity)}</p>
+                        <div class="cart-price">${formatPrice(itemTotal)}</div>
+                        <button class="remove-cart" onclick="removeFromCart('${escapeHTML(item.id)}')">حذف</button>
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+    const total = getCartTotal();
+    const countEl = document.getElementById("cartItemsCount");
+    const totalEl = document.getElementById("cartTotal");
+    const checkoutTotalEl = document.getElementById("checkoutTotal");
+    if(countEl) countEl.textContent = cart.reduce((s,i)=> s + Number(i.quantity || 0), 0);
+    if(totalEl) totalEl.textContent = formatPrice(total);
+    if(checkoutTotalEl) checkoutTotalEl.textContent = formatPrice(total);
+}
+function removeFromCart(id){ cart = cart.filter(item => String(item.id) !== String(id)); saveCart(); updateCartCount(); renderCart(); }
+function openCart(){ renderCart(); openModal("cartModal"); }
+
+/* CHECKOUT */
+function openCheckout(){
+    if(!cart.length){ alert("السلة فارغة. أضف منتجاً أولاً."); return; }
+    renderCart(); closeModal("cartModal"); openModal("checkoutModal");
+}
+async function submitOrder(event){
+    event.preventDefault();
+    if(!cart.length){ alert("السلة فارغة."); return; }
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const city = document.getElementById("customerCity").value.trim();
+    const address = document.getElementById("customerAddress").value.trim();
+    const notes = document.getElementById("customerNotes").value.trim();
+    if(!name || !phone || !city || !address){ alert("يرجى إكمال جميع الحقول المطلوبة."); return; }
+    const total = getCartTotal();
+    const order = {
+        id: "NS-" + Date.now().toString().slice(-6),
+        customer: { name:name, phone:phone, city:city, address:address, notes:notes },
+        customerName: name,
+        phone: phone,
+        city: city,
+        address: address,
+        notes: notes,
+        items: cart.map(item=>({ id:item.id, productId:item.productId, title:item.title, image:item.image, size:item.size, price:Number(item.price), quantity:Number(item.quantity), itemTotal: Number(item.price) * Number(item.quantity) })),
+        total: Number(total),
+        status: "جديد",
+        date: new Date().toLocaleString("ar-IQ")
+    };
+    const btn = document.getElementById('submitOrderBtn');
+    if(btn){ btn.textContent = 'جاري الحفظ في Google Sheets...'; btn.disabled = true; }
+
+    const res = await apiPost({ action: 'addOrder', order: order });
+
+    orders.unshift(order);
+    saveBackup();
+    updateAdmin();
+
+    let message = `🧶 *طلب جديد من متجر نساجون*\n\n━━━━━━━━━━━━━━\n📦 *رقم الطلب:* ${order.id}\n🕐 *التاريخ:* ${order.date}\n━━━━━━━━━━━━━━\n\n👤 *بيانات الزبون*\nالاسم: ${name}\nالهاتف: ${phone}\nالمحافظة / المدينة: ${city}\nالعنوان بالتفصيل: ${address}\nالملاحظات: ${notes || "لا توجد"}\n\n━━━━━━━━━━━━━━\n🛍️ *تفاصيل الطلب*\n`;
+    order.items.forEach((item,index)=>{
+        message += `\n${index+1}) ${item.title}\n📐 القياس: ${item.size}\n🔢 الكمية: ${item.quantity}\n💰 سعر القطعة: ${formatPrice(item.price)}\n💵 مجموع المنتج: ${formatPrice(item.itemTotal)}\n`;
+    });
+    message += `\n━━━━━━━━━━━━━━\n💰 *المجموع النهائي: ${formatPrice(total)}*\n\n✅ يرجى تأكيد استلام الطلب.`;
+
+    cart = []; saveCart(); updateCartCount();
+    document.getElementById("checkoutForm").reset();
+    closeModal("checkoutModal");
+    if(btn){ btn.textContent = 'تأكيد الطلب وحفظه في Google Sheets'; btn.disabled = false; }
+    alert(`تم استلام طلبك بنجاح ✅\n\nرقم الطلب: ${order.id}\n${res && res.success ? 'تم حفظه في Google Sheets' : 'سيتم مزامنته عند توفر الاتصال'}\n\nسيتم تحويلك إلى واتساب.`);
+    const whatsappURL = "https://wa.me/" + ORDER_WHATSAPP + "?text=" + encodeURIComponent(message);
+    window.location.href = whatsappURL;
+}
+
+/* MODALS & WHATSAPP */
+function openModal(id){ const el=document.getElementById(id); if(el){ el.classList.add("active"); el.style.display="flex"; } }
+function closeModal(id){ const el=document.getElementById(id); if(el){ el.classList.remove("active"); el.style.display="none"; } }
+document.querySelectorAll(".modal-overlay").forEach(overlay=>{
+    overlay.addEventListener("click", function(event){ if(event.target === overlay){ overlay.classList.remove("active"); } });
+});
+function toggleWhatsapp(){ const el=document.getElementById("whatsappPopup"); if(el) el.classList.toggle("active"); }
+
+/* ADMIN LOGIN */
+function openAdminLogin(){
+    const input = document.getElementById("adminCodeInput");
+    if(input) input.value = "";
+    openModal("adminLoginModal");
+    setTimeout(()=>{ const i=document.getElementById("adminCodeInput"); if(i) i.focus(); },100);
+}
+async function loginAdmin(){
+    try{
+        const input = document.getElementById("adminCodeInput");
+        const code = input ? input.value.trim() : "";
+        if(code !== ADMIN_CODE){ alert("رمز الدخول غير صحيح ❌\nالرمز الصحيح هو: " + ADMIN_CODE); return; }
+        closeModal("adminLoginModal");
+        const overlay = document.getElementById("adminOverlay");
+        if(overlay){ overlay.classList.add("active"); overlay.style.display="block"; }
+        showAdminSection("dashboard");
+        try{ await refreshAllFromAPI(); }catch(e){ console.error('refresh failed', e); }
+    }catch(e){
+        console.error('loginAdmin error', e);
+        const overlay = document.getElementById("adminOverlay");
+        if(overlay){ overlay.classList.add("active"); overlay.style.display="block"; }
+        showAdminSection("dashboard");
+    }
+}
+function closeAdmin(){ const overlay=document.getElementById("adminOverlay"); if(overlay) overlay.classList.remove("active"); }
+
+/* ADMIN NAVIGATION */
+const adminTitles = { dashboard:"لوحة التحكم - متزامن مع Google Sheets", productsAdmin:"إدارة المنتجات", addProduct:"إضافة منتج", ordersAdmin:"إدارة الطلبات", advertisementAdmin:"الإعلان", settingsAdmin:"الإعدادات" };
+function showAdminSection(sectionId, button){
+    document.querySelectorAll(".admin-section").forEach(section=>{ section.classList.remove("active"); });
+    const section = document.getElementById(sectionId);
+    if(section){ section.classList.add("active"); }
+    const titleEl = document.getElementById("adminPageTitle");
+    if(titleEl) titleEl.textContent = adminTitles[sectionId] || "لوحة الإدارة";
+    document.querySelectorAll(".admin-menu button").forEach(btn=>{ btn.classList.remove("active"); });
+    if(button){ button.classList.add("active"); }
+    if(sectionId === "productsAdmin"){ renderProductsTable(); }
+    if(sectionId === "ordersAdmin"){ loadOrders(); }
+    if(sectionId === "dashboard"){ renderLatestOrders(); updateStats(); }
+    if(sectionId === "advertisementAdmin"){ loadAdvertisementPreview(); }
+    if(sectionId === "settingsAdmin"){ loadSettingsForm(); }
+}
+
+/* ADMIN DASHBOARD */
+function updateStats(){
+    const prodEl = document.getElementById("statProducts");
+    const orderEl = document.getElementById("statOrders");
+    const newEl = document.getElementById("statNewOrders");
+    const salesEl = document.getElementById("statSales");
+    if(prodEl) prodEl.textContent = products.length;
+    if(orderEl) orderEl.textContent = orders.length;
+    if(newEl) newEl.textContent = orders.filter(o=>o.status==="جديد").length;
+    const sales = orders.filter(o=>o.status!=="ملغي").reduce((sum,o)=> sum + Number(o.total || 0), 0);
+    if(salesEl) salesEl.textContent = formatPrice(sales);
+}
+function updateAdmin(){ updateStats(); renderLatestOrders(); renderProductsTable(); renderOrdersTable(); }
+function renderLatestOrders(){
+    const container = document.getElementById("latestOrders");
+    if(!container) return;
+    if(!orders.length){ container.innerHTML = `<div class="admin-empty">لا توجد طلبات حتى الآن - ستظهر من Google Sheets.</div>`; return; }
+    const latest = orders.slice(0,5);
+    container.innerHTML = latest.map(order=>`
+        <div class="order-details">
+            <p><strong>${escapeHTML(order.id)}</strong> — ${escapeHTML(order.customer?.name || "")}</p>
+            <p>${escapeHTML(order.customer?.city || "")} — ${escapeHTML(order.customer?.address || "")}</p>
+            <p>المجموع: <strong>${formatPrice(order.total)}</strong></p>
+            <p>الحالة: ${statusHTML(order.status)}</p>
+        </div>
+    `).join("");
+}
+
+/* ADMIN PRODUCTS TABLE */
+function renderProductsTable(){
+    const body = document.getElementById("productsTableBody");
+    if(!body) return;
+    if(!products.length){
+        body.innerHTML = `<tr><td colspan="6"><div class="admin-empty">لا توجد منتجات - ستتم المزامنة من Google Sheets.</div></td></tr>`;
+        return;
+    }
+    body.innerHTML = products.map(product=>{
+        const firstPrice = product.sizes && product.sizes.length ? Math.min(...product.sizes.map(s=>Number(s.price)||0)) : 0;
+        return `
+            <tr>
+                <td><div class="table-product"><img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.title)}" onerror="this.src='https://via.placeholder.com/100'"><strong>${escapeHTML(product.title)}</strong></div></td>
+                <td>${escapeHTML(product.type || "-")}</td>
+                <td>${escapeHTML(product.material || "-")}</td>
+                <td>${Number(product.stock || 0)}</td>
+                <td>${formatPrice(firstPrice)}</td>
+                <td><div class="action-buttons"><button class="small-btn" onclick="editProduct('${escapeHTML(product.id)}')">تعديل</button><button class="small-btn danger-btn" onclick="deleteProduct('${escapeHTML(product.id)}')">حذف</button></div></td>
+            </tr>
+        `;
+    }).join("");
+}
+
+/* PRODUCT FORM */
+function addSizeRow(name="",price=""){
+    const container = document.getElementById("sizesContainer");
+    if(!container) return;
+    const row = document.createElement("div");
+    row.className = "size-row";
+    row.innerHTML = `
+        <input class="form-control size-name" placeholder="مثال: 3 × 4 متر" value="${escapeHTML(name)}">
+        <input class="form-control size-price" type="number" min="0" placeholder="السعر" value="${escapeHTML(price)}">
+        <button type="button" class="small-btn danger-btn" onclick="this.parentElement.remove()">حذف</button>
+    `;
+    container.appendChild(row);
+}
+function getSizesFromForm(){
+    const rows = document.querySelectorAll("#sizesContainer .size-row");
+    const sizes = [];
+    rows.forEach(row=>{
+        const nameEl = row.querySelector(".size-name");
+        const priceEl = row.querySelector(".size-price");
+        const name = nameEl ? nameEl.value.trim() : "";
+        const price = priceEl ? Number(priceEl.value) : 0;
+        if(name && price > 0){ sizes.push({ name:name, price:price }); }
+    });
+    return sizes;
+}
+
+async function saveProduct(event){
+    event.preventDefault();
+    const btn = document.getElementById('saveProductBtn');
+    
+    try {
+        const title = document.getElementById("productTitle").value.trim();
+        const type = document.getElementById("productType").value.trim();
+        const material = document.getElementById("productMaterial").value.trim();
+        const stock = Number(document.getElementById("productStock").value || 0);
+        const description = document.getElementById("productDescription").value.trim();
+        const editId = document.getElementById("editProductId").value;
+        const sizes = getSizesFromForm();
+
+        if(!title){ alert("اكتب اسم المنتج."); return; }
+        if(!sizes.length){ alert("أضف قياساً واحداً على الأقل مع السعر."); return; }
+
+        if(btn){ btn.textContent = 'جاري الحفظ في Google Sheets...'; btn.disabled = true; }
+
+        const fileInput = document.getElementById("productImageFile");
+        const file = fileInput && fileInput.files ? fileInput.files[0] : null;
+
+        const existingProduct = editId ? products.find(p => String(p.id) === String(editId)) : null;
+        let finalImage = existingProduct ? existingProduct.image : '';
+
+        if(file){
+            try{
+                finalImage = await compressImage(file);
+            }catch(e){
+                console.error("فشل معالجة الصورة:", e);
+                alert("تعذر معالجة الصورة الجديدة، يرجى اختيار صورة أخرى.");
+                return;
+            }
+        }
+
+        if(!finalImage){
+            alert("اختر صورة للمنتج.");
+            return;
+        }
+
+        const product = {
+            id: editId || "P-" + Date.now() + Math.random().toString(16).slice(2),
+            title: title,
+            name: title,
+            type: type,
+            category: type,
+            material: material,
+            stock: stock,
+            description: description,
+            image: finalImage,
+            sizes: sizes,
+            price: sizes.length ? Math.min(...sizes.map(s => Number(s.price))) : 0
+        };
+
+        const action = editId ? 'updateProduct' : 'addProduct';
+        const res = await apiPost({ action: action, product: product });
+
+        if(editId){
+            const idx = products.findIndex(p => String(p.id) === String(editId));
+            if(idx >= 0) products[idx] = product;
+        }else{
+            products.unshift(product);
+        }
+        
+        saveBackup();
+        renderProducts();
+        updateAdmin();
+        alert(res && res.success ? (editId ? "تم تعديل المنتج في Google Sheets ✅" : "تمت إضافة المنتج في Google Sheets ✅") : "تم الحفظ محلياً وسيتم المزامنة عند توفر الاتصال");
+        resetProductForm();
+        showAdminSection("productsAdmin");
+    } catch(err) {
+        console.error("خطأ في حفظ المنتج:", err);
+        alert("حدث خطأ غير متوقع أثناء الحفظ.");
+    } finally {
+        if(btn){ 
+            btn.textContent = 'حفظ في Google Sheets'; 
+            btn.disabled = false; 
+        }
+    }
+}
+
+function editProduct(id){
+    const product = products.find(p=> String(p.id)===String(id));
+    if(!product) return;
+    document.getElementById("editProductId").value = product.id;
+    document.getElementById("productTitle").value = product.title || "";
+    document.getElementById("productType").value = product.type || "";
+    document.getElementById("productMaterial").value = product.material || "";
+    document.getElementById("productStock").value = product.stock || 0;
+    document.getElementById("productDescription").value = product.description || "";
+    document.getElementById("productFormTitle").textContent = "تعديل المنتج - سيُحدث في Google Sheets";
+    const preview = document.getElementById("productImagePreview");
+    if(preview){ preview.src = product.image; preview.style.display = "block"; }
+    const container = document.getElementById("sizesContainer");
+    if(container) container.innerHTML = "";
+    (product.sizes || []).forEach(size=>{ addSizeRow(size.name, size.price); });
+    showAdminSection("addProduct");
+    window.scrollTo({top:0, behavior:"smooth"});
+}
+
+async function deleteProduct(id){
+    const product = products.find(p=> String(p.id)===String(id));
+    if(!product) return;
+    const confirmed = confirm(`هل أنت متأكد من حذف المنتج "${product.title}" من Google Sheets؟`);
+    if(!confirmed) return;
+    const res = await apiPost({ action: 'deleteProduct', id: id });
+    products = products.filter(p=> String(p.id)!==String(id));
+    cart = cart.filter(item=> String(item.productId)!==String(id));
+    saveCart();
+    saveBackup();
+    renderProducts();
+    updateCartCount();
+    updateAdmin();
+    alert(res && res.success ? "تم حذف المنتج من Google Sheets." : "تم الحذف محلياً وسيتم المزامنة.");
+}
+
+function resetProductForm(){
+    const form = document.getElementById("productForm");
+    if(form) form.reset();
+    const editEl = document.getElementById("editProductId");
+    if(editEl) editEl.value = "";
+    const titleEl = document.getElementById("productFormTitle");
+    if(titleEl) titleEl.textContent = "إضافة منتج جديد - سيُحفظ في Google Sheets";
+    const preview = document.getElementById("productImagePreview");
+    if(preview){ preview.style.display = "none"; preview.src = ""; }
+    const container = document.getElementById("sizesContainer");
+    if(container) container.innerHTML = "";
+    addSizeRow();
+}
+
+/* IMAGE COMPRESSION */
+function compressImage(file){
+    return new Promise((resolve,reject)=>{
+        const reader = new FileReader();
+        reader.onload = function(event){
+            const img = new Image();
+            img.onload = function(){
+                const canvas = document.createElement("canvas");
+                const maxWidth = 500;
+                const scale = Math.min(1, maxWidth / img.width);
+                canvas.width = img.width * scale;
+                canvas.height = img.height * scale;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                resolve(canvas.toDataURL("image/jpeg", 0.5));
+            };
+            img.onerror = reject;
+            img.src = event.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+function previewProductImage(event){
+    const file = event.target.files[0];
+    if(!file) return;
+    const preview = document.getElementById("productImagePreview");
+    if(!preview) return;
+    preview.src = URL.createObjectURL(file);
+    preview.style.display = "block";
+}
+
+/* ORDERS */
+function statusHTML(status){
+    if(status === "مكتمل"){ return `<span class="status status-done">مكتمل</span>`; }
+    if(status === "ملغي"){ return `<span class="status status-cancel">ملغي</span>`; }
+    return `<span class="status status-new">جديد</span>`;
+}
+function renderOrdersTable(){
+    const body = document.getElementById("ordersTableBody");
+    if(!body) return;
+    if(!orders.length){
+        body.innerHTML = `<tr><td colspan="9"><div class="admin-empty">لا توجد طلبات حتى الآن - ستظهر من Google Sheets.</div></td></tr>`;
+        return;
+    }
+    body.innerHTML = orders.map(order=>`
+        <tr>
+            <td><strong>${escapeHTML(order.id)}</strong></td>
+            <td>${escapeHTML(order.customer?.name || "-")}</td>
+            <td><a href="tel:${escapeHTML(String(order.customer?.phone || "").replace(/[^\d+]/g,""))}">${escapeHTML(order.customer?.phone || "-")}</a></td>
+            <td>${escapeHTML(order.customer?.city || "-")}</td>
+            <td>${escapeHTML(order.customer?.address || "-")}</td>
+            <td><strong>${formatPrice(order.total)}</strong></td>
+            <td>${statusHTML(order.status)}</td>
+            <td>${escapeHTML(order.date || "-")}</td>
+            <td><div class="action-buttons"><button class="small-btn" onclick="viewOrder('${escapeHTML(order.id)}')">عرض</button><button class="small-btn" onclick="changeOrderStatus('${escapeHTML(order.id)}')">الحالة</button><button class="small-btn danger-btn" onclick="deleteOrder('${escapeHTML(order.id)}')">حذف</button></div></td>
+        </tr>
+    `).join("");
+}
+function viewOrder(id){
+    const order = orders.find(o=> String(o.id)===String(id));
+    if(!order) return;
+    let message = `رقم الطلب: ${order.id}\n\nالعميل: ${order.customer?.name || "-"}\nالهاتف: ${order.customer?.phone || "-"}\nالمحافظة: ${order.customer?.city || "-"}\nالعنوان: ${order.customer?.address || "-"}\nالملاحظات: ${order.customer?.notes || "لا توجد"}\n\nالمنتجات:\n`;
+    (order.items || []).forEach((item,index)=>{
+        const itemTotal = item.itemTotal ?? Number(item.price || 0) * Number(item.quantity || 0);
+        message += `\n${index+1}. ${item.title}\nالقياس: ${item.size}\nالكمية: ${item.quantity}\nالسعر: ${formatPrice(item.price)}\nالمجموع: ${formatPrice(itemTotal)}\n`;
+    });
+    message += `\nالمجموع النهائي: ${formatPrice(order.total)}\n`;
+    alert(message);
+}
+async function changeOrderStatus(id){
+    const order = orders.find(o=> String(o.id)===String(id));
+    if(!order) return;
+    const status = prompt("اكتب الحالة:\nجديد\nمكتمل\nملغي", order.status || "جديد");
+    if(status === null) return;
+    const allowed = ["جديد","مكتمل","ملغي"];
+    if(!allowed.includes(status.trim())){ alert("الحالة يجب أن تكون: جديد أو مكتمل أو ملغي."); return; }
+    const newStatus = status.trim();
+    const res = await apiPost({ action: 'updateOrderStatus', id: id, status: newStatus });
+    order.status = newStatus;
+    saveBackup();
+    updateAdmin();
+    if(res && res.success){ alert("تم تحديث الحالة في Google Sheets"); }
+}
+async function deleteOrder(id){
+    const confirmed = confirm("هل تريد حذف هذا الطلب من Google Sheets؟");
+    if(!confirmed) return;
+    await apiPost({ action: 'deleteOrder', id: id });
+    orders = orders.filter(o=> String(o.id)!==String(id));
+    saveBackup();
+    updateAdmin();
+}
+async function clearOrders(){
+    if(!orders.length){ alert("لا توجد طلبات."); return; }
+    const confirmed = confirm("تحذير: سيتم حذف جميع الطلبات نهائياً من Google Sheets ومن هذا الجهاز.\nهل أنت متأكد؟");
+    if(!confirmed) return;
+    const res = await apiPost({ action: 'clearOrders' });
+    orders = [];
+    saveBackup();
+    updateAdmin();
+    alert(res && res.success ? "تم حذف جميع الطلبات من Google Sheets." : "تم الحذف محلياً.");
+}
+
+/* ADVERTISEMENT */
+function previewAdImage(event){
+    const file = event.target.files[0];
+    if(!file) return;
+    const preview = document.getElementById("adImagePreview");
+    if(!preview) return;
+    preview.src = URL.createObjectURL(file);
+    preview.style.display = "block";
+}
+async function saveAdvertisement(){
+    const file = document.getElementById("adImageFile").files[0];
+    const btn = document.querySelector('#advertisementAdmin .primary-btn');
+    if(btn){ btn.textContent = 'جاري الحفظ...'; btn.disabled = true; }
+
+    const doSave = async (base64) => {
+        const payload = { action: 'saveAdvertisement', advertisement: { enabled: true, image: base64 || advertisement.image } };
+        const res = await apiPost(payload);
+        if(base64) advertisement.image = base64;
+        advertisement.enabled = true;
+        saveBackup();
+        if(btn){ btn.textContent = 'حفظ الإعلان في Google Sheets'; btn.disabled = false; }
+        alert(res && res.success ? "تم حفظ الإعلان في Google Sheets وسيظهر على جميع الأجهزة ✅" : "تم الحفظ محلياً");
+    };
+
+    if(file){
+        try{
+            const base64 = await compressImage(file);
+            await doSave(base64);
+        }catch(e){
+            alert("تعذر معالجة صورة الإعلان.");
+            if(btn){ btn.textContent = 'حفظ الإعلان في Google Sheets'; btn.disabled = false; }
+        }
+    }else{
+        if(advertisement.image){
+            await doSave(null);
+        }else{
+            alert("اختر صورة الإعلان أولاً.");
+            if(btn){ btn.textContent = 'حفظ الإعلان في Google Sheets'; btn.disabled = false; }
+        }
+    }
+}
+async function disableAdvertisement(){
+    const res = await apiPost({ action: 'saveAdvertisement', advertisement: { enabled: false, image: advertisement.image } });
+    advertisement.enabled = false;
+    saveBackup();
+    alert(res && res.success ? "تم إيقاف الإعلان في Google Sheets." : "تم إيقاف الإعلان محلياً.");
+}
+function loadAdvertisementPreview(){
+    const preview = document.getElementById("adImagePreview");
+    if(!preview) return;
+    if(advertisement.image){ preview.src = advertisement.image; preview.style.display = "block"; }
+    else{ preview.style.display = "none"; }
+}
+function showAdvertisementNow(){
+    if(!advertisement.image){ alert("لا توجد صورة إعلان محفوظة."); return; }
+    const img = document.getElementById("advertisementImage");
+    if(img) img.src = advertisement.image;
+    openAd();
+}
+function openAd(){ const el=document.getElementById("adOverlay"); if(el) el.classList.add("active"); }
+function skipAdvertisement(){
+    const el=document.getElementById("adOverlay");
+    if(el) el.classList.remove("active");
+    localStorage.setItem("nasajon_ad_skipped", new Date().toDateString());
+}
+
+/* SETTINGS */
+async function saveSettings(){
+    const storeName = document.getElementById("settingStoreName").value.trim() || "نساجون";
+    const whatsapp = document.getElementById("settingWhatsapp").value.trim() || "9647778060060";
+    const description = document.getElementById("settingDescription").value.trim();
+    const btn = document.getElementById('saveSettingsBtn');
+    if(btn){ btn.textContent = 'جاري الحفظ...'; btn.disabled = true; }
+
+    const newSettings = { storeName: storeName, whatsapp1: whatsapp, description: description, whatsapp: whatsapp, store_name: storeName };
+    const res = await apiPost({ action: 'saveSettings', settings: newSettings });
+
+    settings.storeName = storeName;
+    settings.whatsapp1 = whatsapp;
+    settings.description = description;
+    saveBackup();
+    if(btn){ btn.textContent = 'حفظ الإعدادات في Google Sheets'; btn.disabled = false; }
+    alert(res && res.success ? "تم حفظ الإعدادات في Google Sheets وستظهر على كل الأجهزة ✅" : "تم الحفظ محلياً وسيتم المزامنة");
+}
+
+/* REFRESH ALL */
+async function refreshAllFromAPI(){
+    await Promise.all([loadProducts(), loadOrders(), loadSettingsAndAd()]);
+    updateAdmin();
+}
+
+/* INITIALIZE */
+async function initialize(){
+    renderProducts();
+    updateCartCount();
+    resetProductForm();
+    loadSettingsForm();
+    loadAdvertisementPreview();
+    await refreshAllFromAPI();
+
+    const today = new Date().toDateString();
+    const skipped = localStorage.getItem("nasajon_ad_skipped");
+    if(advertisement.enabled && advertisement.image && skipped !== today){
+        setTimeout(()=>{
+            const imgEl = document.getElementById("advertisementImage");
+            if(imgEl) imgEl.src = advertisement.image;
+            openAd();
+        },700);
+    }
+}
+initialize();
+</script>
+</body>
+</html>
